@@ -19,7 +19,7 @@ $explode = explode('.',$ip);
 		$contador = count($explode);
 		
 			
-			foreach($explode as $key => $value)
+		    foreach($explode as $key => $value)
 		    {
 	   	      	if(empty($value))	
 	   	        {	  
