@@ -1,0 +1,101 @@
+<?php
+####################################
+#  								   #	
+#  Nome: Verificar versão de IPv4  #
+#  Developer: carlosrodrigues.it   #
+#  Data: 18 Janeiro de 2015	       #
+#  Version: 1.0                    #
+#								   #
+####################################
+define('br', "<br />");
+global $explode;
+$ip = "192.168.10.34";
+$explode = explode('.',$ip);
+
+
+	function verifiedIP($ip)
+	{	
+		$explode = explode('.',$ip);
+		$contador = count($explode);
+		
+			
+			foreach($explode as $key => $value)
+		    {
+	   	      	if(empty($value))	
+	   	        {	  
+		    		global $validate;
+					$validate = NULL;
+				}
+				else
+				{
+					global $not_validate;
+					$validate = !NULL;
+				}
+			}
+			
+			
+			foreach($explode as $key => $value)
+		    {
+	   	      
+			  	if((!empty($ip))  && ($validate))	
+	   	        {	  
+		             
+					 if($contador == 4) 
+		       	     {
+			    	      $cont_key = $key + 1;
+						  global $valid;
+					      $valid = !NULL;
+						  echo $cont_key." Octet = ".$value;
+			    		  echo br;
+						  continue;		  
+				 	 }
+					 else
+					 {
+					 	  if($contador < 4)
+						  {
+						     echo "Invalid IP version 4, LESS THAN 4 OCTET!";
+							 global $valid;
+					         $valid = NULL;
+						     break;
+						  }
+						  if($contador > 4)
+						  {
+							 echo "Invalid IP version 4, MORE THAN 4 OCTET!";
+							 global $valid;
+					         $valid = NULL;
+						     break;
+						  }
+					 }
+			    }
+				else
+				{
+					if(empty($ip))
+					{
+						echo "Invalid IP version 4, EMPTY IP!";
+						global $valid;
+					    $valid = NULL;
+				 		break;
+					}
+					else
+					{
+						echo "Invalid IP version 4 , FORMAT OR OCTET!";
+						global $valid;
+					    $valid = NULL;
+				 		break;
+					}
+						
+				}
+			  
+			}			
+	}	
+
+verifiedIP($ip);	
+
+
+if($valid == !NULL)
+{
+	echo "Valid IP version 4!";
+}
+
+
+?>
