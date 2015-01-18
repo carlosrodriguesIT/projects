@@ -1,11 +1,11 @@
 <?php
 ####################################
-#  								   #	
+#  				   #	
 #  Nome: Verificar versão de IPv4  #
 #  Developer: carlosrodrigues.it   #
-#  Data: 18 Janeiro de 2015	       #
-#  Version: 1.0                    #
-#								   #
+#  Data: 18 Janeiro de 2015	   #
+#  Version: 1.0  GitHub            #
+#				   #
 ####################################
 define('br', "<br />");
 global $explode;
