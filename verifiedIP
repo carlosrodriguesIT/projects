@@ -24,7 +24,7 @@ $explode = explode('.',$ip);
 	   	      	if(empty($value))	
 	   	        {	  
 		    		global $validate;
-					$validate = NULL;
+				$validate = NULL;
 				}
 				else
 				{
@@ -35,45 +35,45 @@ $explode = explode('.',$ip);
 			
 			
 			foreach($explode as $key => $value)
-		    {
+		        {
 	   	      
 			  	if((!empty($ip))  && ($validate))	
-	   	        {	  
+	   	                {	  
 		             
 					 if($contador == 4) 
-		       	     {
-			    	      $cont_key = $key + 1;
-						  global $valid;
-					      $valid = !NULL;
-						  echo $cont_key." Octet = ".$value;
-			    		  echo br;
-						  continue;		  
+		       	           	 {
+			    	      		$cont_key = $key + 1;
+						global $valid;
+					        $valid = !NULL;
+						echo $cont_key." Octet = ".$value;
+			    		        echo br;
+						continue;		  
 				 	 }
 					 else
 					 {
-					 	  if($contador < 4)
-						  {
-						     echo "Invalid IP version 4, LESS THAN 4 OCTET!";
-							 global $valid;
-					         $valid = NULL;
-						     break;
-						  }
-						  if($contador > 4)
-						  {
-							 echo "Invalid IP version 4, MORE THAN 4 OCTET!";
-							 global $valid;
-					         $valid = NULL;
-						     break;
-						  }
+					 	if($contador < 4)
+						{
+						      echo "Invalid IP version 4, LESS THAN 4 OCTET!";
+						      global $valid;
+					              $valid = NULL;
+						      break;
+						}
+						if($contador > 4)
+						{
+						       echo "Invalid IP version 4, MORE THAN 4 OCTET!";
+						       global $valid;
+					               $valid = NULL;
+						       break;
+						}
 					 }
-			    }
+			        }
 				else
 				{
 					if(empty($ip))
 					{
 						echo "Invalid IP version 4, EMPTY IP!";
-						global $valid;
-					    $valid = NULL;
+					        global $valid;
+				   	        $valid = NULL;
 				 		break;
 					}
 					else
@@ -91,11 +91,8 @@ $explode = explode('.',$ip);
 
 verifiedIP($ip);	
 
-
 if($valid == !NULL)
 {
 	echo "Valid IP version 4!";
 }
-
-
 ?>
